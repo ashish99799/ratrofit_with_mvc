@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.activities.github.GithubUser">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_3sdp">
+
+                <TextView
+                    android:id="@+id/lblUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="User Name"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:singleLine="true"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/lblLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Location"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/lblJoinDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Join Date"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/lblFollowers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Followers"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/lblFollowing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Following"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_4sdp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    style="@style/CustomSearchView"
+                    android:focusable="false"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Search user ripo" />
+
+            </LinearLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUserRipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/github_user_cell" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
